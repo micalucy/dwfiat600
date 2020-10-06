@@ -1,0 +1,272 @@
+
+@import "colores";
+$fuentePrincipal: roboto 35px;
+$fuenteSec: roboto 20px;
+
+
+h1{
+	color:$miAzul;
+	font:$fuentePrincipal;
+}
+
+h2{
+	color:$miWhite;
+	$fuenteSec: roboto 20px;
+
+}
+
+p{
+	color:$black;
+	font:$fuenteSec;
+}
+
+
+.container {
+
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  padding: 15px;
+  background-color: white;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+
+}
+
+.zoom {
+    transition: transform .2s; 
+}
+ 
+.zoom:hover {
+    transform: scale(1.5); 
+}
+
+
+.aparece
+{
+   animation-duration: 2s;
+   animation-name: aparecer;
+}
+
+@keyframes aparecer {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+
+
+/*------------ time line Section ------------*/
+.timeline {
+    margin-bottom:0px;
+    overflow: hidden;
+    position: relative;
+    margin:40px 0 0;
+    background-image:url("../img/11.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+}
+.timeline .bg {
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    width:100%;
+    background: url("../img/11.png") repeat scroll left top rgba(0, 0, 0, .6);
+}
+.timeline .content {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    z-index: 1;
+    box-shadow:0 10px 10px -10px rgba(50, 50, 50, 0.75) inset, 0 -10px 10px -10px rgba(50, 50, 50, 0.75) inset;
+}
+.timeline ul {
+    font-size: 0;
+    color: black;
+    height: 450px;
+    line-height: 370px;
+    padding: 35px 45px;
+    white-space: nowrap;
+}
+.timeline li {
+    display: inline-block;
+    font: 15px "Helvetica Neue",Arial,Helvetica,sans-serif;
+    height: 140px;
+    color: black;
+    position: relative;
+    white-space: normal;
+    width: 267px;
+}
+
+.timeline li div {
+    position: absolute;
+}
+.timeline li:after {
+    background-color: #F6464A;
+    border-radius: 4px;
+    -webkit-border-radius:4px;
+    content: "";
+    height: 40px;
+    left: 0;
+    position: absolute;
+    width: 10px;
+    z-index: 100;
+}
+.timeline li:nth-of-type(2n+1) {
+    vertical-align: bottom;
+    z-index: 100;
+}
+.timeline li:nth-of-type(2n+1) div {
+    top: 35px;
+}
+.timeline li:nth-of-type(2n+1):after {
+    top: 0;
+}
+.timeline li:nth-of-type(2n) {
+    vertical-align: top;
+    z-index: 1;
+}
+.timeline li:nth-of-type(2n) div {
+    bottom: 35px;
+}
+.timeline li:nth-of-type(2n):before {
+    background: url("../img/bac.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    content: "";
+    height: 142px;
+    left: -261px;
+    position: absolute;
+    top: 122px;
+    width: 529px;
+    z-index: 1;
+
+}
+.timeline li:nth-of-type(2n):after {
+    bottom: 0;
+}
+.timeline p {
+    color: black;
+    text-align:left;
+}
+.timeline a {
+    color: black;
+}
+.timeline a:hover {
+    color: #9700D9;
+}
+.timeline h6{
+background:#1c1c1c;
+    color: #FFFFFF;
+    display: table;
+    font-size: 18px;
+    font-weight: lighter;
+    line-height: 20px;
+    padding: 5px;
+    text-align: left;
+}
+.ps-container .ps-scrollbar-x {
+    background-color: #F6464A;
+}
+
+#galeriaf .col-lg-4 {
+    margin: 0px !important;
+    padding: 5px;
+}
+
+#galeriafiat img {
+    width: 500px;
+    height: 200px;
+    
+}
+
+.texto_detalle{
+
+    font-size: 15px;
+    font-family: roboto;
+    font-style: normal;
+}
+
+.texto_resalta{
+
+    margin: 100px;
+    font-size: 35px;
+    font-family: roboto;
+    font-style: bold;
+}
+
+
+.texto_centro{
+
+    font-style: bold;
+    text-align: center;
+
+}
+
+$redes: ( /*Declaramos nuestro mapa*/
+        twitter: #55acee,
+        facebook:  #3a5795,
+        send-mail: #C25E30
+); 
+/*Creamos el bucle para usar los valores del mapa*/
+@each $redSocial, $color in $redes {
+   .btn--#{$redSocial} {
+       background-color: $color;
+   }
+}
+
+.btn {
+  width: 100px;
+  text-align: center;
+  padding: 5px 0;
+  margin: 2px auto;
+  border-radius: 2px;
+  color: $miWhite;
+}
+
+.btn_success {
+  @extend .btn;
+  background-color: #108EFF;
+}
+.btn_alert {
+  @extend .btn;
+  background-color: #FF8516;
+}
+.btn_cancel {
+  @extend .btn;
+  background-color: #D61E20;
+}
+
+
+$ancho: 720px;
+
+.box_one {
+   width: $ancho/2;
+}
+.box_two {
+   width: ($ancho/2)-50;
+}
+.box_tres {
+   width: ($ancho/2)+50;
+}
+
+div {
+  background: $miWhite;
+  margin: 0 auto;
+  padding: 20px;
+   h1 {
+    color: $miAzul;
+  }
+   li {
+    color: $miVerde;
+  }
+}
+
+/* ejemplo for */
+@for $i from 1 through 3 {
+  .casitodos-#{$i} { width: 6em * $i; }
+}
